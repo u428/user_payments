@@ -22,17 +22,6 @@ public class UnitController {
     @Autowired
     PaymentService paymentService;
 
-
-    @GetMapping(path = "/hello")
-    public String hello(){
-        return "helo";
-    }
-    @GetMapping(path = "/hello2")
-    public String hello2(){
-        return "helo2";
-    }
-
-
     @GetMapping(path = "/")
     public ResponseEntity<String> Hello(@RequestParam("start") Date start,@RequestParam("end") Date end ){
         return ResponseEntity.ok(paymentService.getSummAmount(start, end));
