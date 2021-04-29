@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 import java.io.Serializable;
 import java.util.List;
 
@@ -29,7 +30,8 @@ public class Users implements Serializable {
     @Column(name = "l_name")
     private String lastName;
 
-    @Column(name = "email")
+    @Column(name = "email", unique = true)
+    @Email
     private String email;
 
     @Column(name = "encrypted_pass")
