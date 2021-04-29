@@ -27,6 +27,11 @@ public class UnitController {
     public String hello(){
         return "helo";
     }
+    @GetMapping(path = "/hello2")
+    public String hello2(){
+        return "helo2";
+    }
+
 
     @GetMapping(path = "/")
     public ResponseEntity<String> Hello(@RequestParam("start") Date start,@RequestParam("end") Date end ){
